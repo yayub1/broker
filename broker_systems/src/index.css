@@ -1,0 +1,959 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50; /* Dark blue color */
+    padding: 1rem 2rem;
+    position: sticky;
+}
+
+.navbar-logo h1 {
+    color: #ecf0f1; /* Light color for contrast */
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: #ecf0f1; /* Light color for links */
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.navbar-links a:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+.homepage {
+    font-family: 'Roboto', sans-serif; /* Font family */
+    margin-top: 50px;
+}
+
+.main-banner {
+    background-image: url('https://img.freepik.com/free-vector/management-round-isometric-composition_98292-7514.jpg?ga=GA1.1.1482432322.1722930152&semt=ais_hybrid'); /* Replace with a real image */
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.banner-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.search-bar {
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.banner-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.browse-button, .sell-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.browse-button {
+    background-color: #3498db; /* Blue */
+    color: white;
+}
+
+.sell-button {
+    background-color: #e67e22; /* Orange */
+    color: white;
+}
+
+.featured-listings {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.listing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.listing-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.listing-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    margin: 20px 0;
+}
+
+.footer {
+    background-color: #2c3e50; /* Dark blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* 
+   listing code start
+*/
+
+/* Listings.css */
+
+/* Main container for the listings page */
+.listings-page {
+    font-family: 'Open Sans', sans-serif; /* Use a clean, legible font */
+    padding: 20px; /* Add padding around the page */
+}
+
+/* Header styling */
+h1 {
+    text-align: center; /* Center the header text */
+    margin-bottom: 20px; /* Space below the header */
+    color: #2A9DF4; /* Header color */
+}
+
+/* Grid layout for listings */
+.listings-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Individual listing card styling */
+.listing-card {
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #ffffff; /* White background */
+    text-align: center; /* Center text */
+    padding: 15px; /* Padding inside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    width: 400px;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+/* Hover effect for listing cards */
+.listing-card:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Image styling */
+.listing-image {
+    width: 100%; /* Full width */
+    height: 250px; /* Fixed height */
+    object-fit: cover; /* Cover the area without distortion */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+/* Title styling */
+.listing-title {
+    font-size: 18px; /* Font size for title */
+    font-weight: bold; /* Bold text */
+    margin: 10px 0; /* Space above and below */
+    color: #333333; /* Dark gray color */
+}
+
+/* Price styling */
+.listing-price {
+    font-size: 16px; /* Font size for price */
+    color: #2A9DF4; /* Blue color for price */
+    margin: 5px 0; /* Space above and below */
+    font-weight: bold; /* Bold text */
+}
+
+/* Location styling */
+.listing-location {
+    font-size: 14px; /* Font size for location */
+    color: #777777; /* Light gray color */
+    margin: 5px 0; /* Space above and below */
+}
+
+/* Button styling */
+.view-details-button {
+    margin-top: 15px; /* Space above the button */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #34D399; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Button hover effect */
+.view-details-button:hover {
+    background-color: #2AA16F; /* Darker green on hover */
+}
+
+
+
+
+
+/* 
+   about us code start
+*/
+.about-us {
+    font-family: Arial, sans-serif; /* Font for the entire component */
+    padding: 20px; /* Padding around the component */
+    max-width: 800px; /* Maximum width for the content */
+    margin: auto; /* Center the component */
+    background-color: #ffffff; /* White background for the component */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.about-header {
+    text-align: center; /* Center the header text */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+h1 {
+    color: #2c3e50; /* Dark color for the main heading */
+    font-size: 2.5em; /* Larger font size for the main heading */
+}
+
+h2 {
+    color: #2980b9; /* Color for section headings */
+    margin-top: 20px; /* Space above section headings */
+    margin-bottom: 10px; /* Space below section headings */
+}
+
+h3 {
+    color: #27ae60; /* Color for subheadings */
+    margin-top: 15px; /* Space above subheadings */
+}
+
+ul {
+    list-style-type: disc; /* Bullet points for lists */
+    margin-left: 20px; /* Indentation for lists */
+}
+
+.features {
+    margin-bottom: 20px; /* Space below feature sections */
+}
+
+
+
+
+.about-footer {
+    text-align: center; /* Center the footer text */
+    margin-top: 20px; /* Space above the footer */
+    font-style: italic; /* Italic style for footer text */
+    color: #7f8c8d; /* Gray color for footer text */
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 600px) {
+    .about-us {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller font size for the main heading */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Smaller font size for section headings */
+    }
+
+    h3 {
+        font-size: 1.2em; /* Smaller font size for subheadings */
+    }
+
+    .social-media-icons img {
+        width: 25px; /* Smaller icons on mobile */
+        height: 25px; /* Smaller icons on mobile */
+    }
+}
+
+/*contact start*/
+
+.contact {
+    padding: 20px; /* Add padding around the contact section */
+    text-align: center; /* Center the text */
+}
+
+.contact-info {
+    margin-top: 20px; /* Add some space above the contact info */
+}
+
+.social-media-icons {
+    display: flex;                /* Use flexbox layout */
+    justify-content: center;      /* Center items horizontally */
+    align-items: center;          /* Center items vertically */
+    gap: 30px;                   /* Optional: Add space between icons */
+}
+
+.social-media-icons a {
+    display: inline-block;        /* Ensure the anchor tags are inline-block */
+}
+
+.social-media-icons img {
+    width: 40px; /* Set a fixed width for the icons */
+    height: auto; /* Maintain aspect ratio */
+    
+}
+.contact-info {
+    background-color: #f9f9f9; /* Light background for contact section */
+    padding: 15px; /* Padding around the contact section */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 20px; /* Space above the contact section */
+}
+
+.contact-info h2 {
+    color: #2980b9; /* Color for contact section heading */
+}
+
+.contact-info p {
+    font-size: 16px; /* Font size for paragraphs */
+    margin: 10px 0; /* Space above and below paragraphs */
+}
+
+.contact-info a {
+    color: #3498db; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+/*sign up*/
+
+.signup-form {
+    width: 80%; /* Set width to 80% of the viewport */
+    max-width: 90%; /* Allow a maximum width of 90% */
+    height: 350px; /* Set a fixed height */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Position it absolutely */
+    left: 50%; /* Center horizontally */
+    top: 100px; /* Position from the top */
+    transform: translateX(-50%); /* Adjust for centering */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-form input {
+    width: 40%; /* Full width of the form */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+.signup-form button {
+    width: 100%; /* Full width of the form */
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup-form button:hover {
+    background-color: #218838;
+}
+
+#close-btn{
+    width: 50px;
+    float: right;
+}
+
+.close-button:hover {
+    color: #e74c3c; /* Change color on hover (red) */
+}
+
+/* login start*/
+
+/* Login Form Styles */
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+    position: absolute;
+    left: 300px;
+
+}
+
+.login-form h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Input Fields */
+.login-form input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.login-form button {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.login-form button:hover {
+    background-color: #218838; /* Darker green */
+}
+
+/* Close Button */
+.close-button {
+    background-color: transparent;
+    color: #333;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .login-form {
+        width: 90%;
+    }
+}
+
+
+
+/* Dropdown Styles */
+.signup-form label {
+    display: block; /* Make the label a block element */
+    margin: 10px 0 5px; /* Add some margin for spacing */
+    font-weight: bold; /* Make the label text bold */
+    position: relative;
+    left: 50px;
+   
+    
+}
+#bankoption{
+    position: relative;
+    left: 50px;
+}
+#booknumber{
+    position: relative;
+    left: 50px;
+}
+
+.signup-form select {
+    width: 20%; /* Make the dropdown full width */
+    padding: 10px; /* Add padding for better touch targets */
+    margin: 10px 0; /* Add margin for spacing */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Increase font size for readability */
+    background-color: #fff; /* White background */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Dropdown Hover and Focus Styles */
+.signup-form select:hover {
+    border-color: #28a745; /* Change border color on hover */
+}
+
+.signup-form select:focus {
+    outline: none; /* Remove default outline */
+    border-color: #28a745; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Add shadow on focus */
+}
+
+/*House*/
+
+/* House Listings Page Styles */
+.house-listings-page {
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color */
+}
+
+/* Title Styles */
+.house-listings-page h1 {
+    font-size: 2.5em;
+    color: #2A9DF4; /* Title color */
+}
+
+/* Grid Layout for Houses */
+.houses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+}
+
+/* House Card Styles */
+.house-card {
+    background-color: white; /* White background for cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Prevent overflow */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+/* House Image Styles */
+.house-image {
+    width: 100%; /* Full width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Cover the area */
+}
+
+/* House Title Styles */
+.house-title {
+    font-size: 1.5em;
+    margin: 10px;
+    color: #333; /* Dark text color */
+}
+
+/* House Description Styles */
+.house-description {
+    margin: 10px;
+    color: #666; /* Lighter text color */
+}
+
+/* House Price Styles */
+.house-price {
+    font-size: 1.2em;
+    margin: 10px;
+    color: #28a745; /* Green color for price */
+}
+
+/* House Location Styles */
+.house-location {
+    margin: 10px;
+    color: #999; /* Gray color for location */
+}
+
+/* Add to Cart Button Styles */
+.add-to-cart-button {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin: 10px; /* Margin */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+/* Add to Cart Button Hover Effect */
+.add-to-cart-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/*backtohome*/
+
+/* Back to Home Button Styles */
+#backtohome {
+    position: absolute; /* Position it absolutely within the parent */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: #2A9DF4; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    position: sticky;
+    float: right;
+   
+    
+}
+
+/* Hover Effect */
+.back-to-home-button:hover {
+    background-color: #1a7bbf; /* Darker shade on hover */
+}
+
+/*car*/
+/* Car Listings Page Styles */
+.car-listings-page {
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color */
+}
+
+/* Title Styles */
+.car-listings-page h1 {
+    font-size: 2.5em;
+    color: #2A9DF4; /* Title color */
+}
+
+/* Grid Layout for Cars */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+}
+
+/* Car Card Styles */
+.car-card {
+    background-color: white; /* White background for cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Prevent overflow */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+/* Car Image Styles */
+.car-image {
+    width: 100%; /* Full width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Cover the area */
+}
+
+/* Car Title Styles */
+.car-title {
+    font-size: 1.5em;
+    margin: 10px;
+    color: #333; /* Dark text color */
+}
+
+/* Car Description Styles */
+.car-description {
+    margin: 10px;
+    color: #666; /* Lighter text color */
+}
+
+/* Car Price Styles */
+.car-price {
+    font-size: 1.2em;
+    margin: 10px;
+    color: #28a745; /* Green color for price */
+}
+
+/* Car Location Styles */
+.car-location {
+    margin: 10px;
+    color: #999; /* Gray color for location */
+}
+
+/* Add to Cart Button Styles */
+.add-to-cart-button {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin: 10px; /* Margin */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+/* Add to Cart Button Hover Effect */
+.add-to-cart-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Back to Home Button Styles */
+.back-to-home-button {
+    position: absolute; /* Position it absolutely within the parent */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: #2A9DF4; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Back to Home Button Hover Effect */
+.back-to-home-button:hover {
+    background-color: #1a7bbf; /* Darker shade on hover */
+}
+
+
+/*electronics
+*/
+
+.electronics-listings-page {
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.electronics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.electronics-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.electronics-card:hover {
+    transform: scale(1.05);
+}
+
+.electronics-image {
+    width: 100%;
+    height: auto;
+}
+
+.electronics-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.electronics-description {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 10px 10px;
+}
+
+.electronics-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2A9DF4;
+    margin: 0 10px 10px;
+}
+
+.electronics-location {
+    font-size: 0.8em;
+    color: #999;
+    margin: 0 10px 10px;
+}
+
+button {
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1a7bbf;
+}
+
+/*profession*/
+.professionals-listings-page {
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.professionals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.professional-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.professional-card:hover {
+    transform: scale(1.05);
+}
+
+.professional-image {
+    width: 100%;
+    height: auto;
+}
+
+.professional-name {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.professional-profession {
+    font-size: 1em;
+    color: #2A9DF4;
+    margin: 0 10px;
+}
+
+.professional-description {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 10px 10px;
+}
+
+.professional-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2A9DF4;
+    margin: 0 10px 10px;
+}
+
+.professional-location {
+    font-size: 0.8em;
+    color: #999;
+    margin: 0 10px 10px;
+}
+
+button {
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1a7bbf;
+}
+
+/*login and sign up*/
+/* SellYourItem.css */
+
+body {
+    font-family: Arial, sans-serif; /* Set a clean font for the body */
+    background-color: #f8f9fa; /* Light background color */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add padding around the body */
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Darker text color for better readability */
+}
+
+form {
+    max-width: 500px; /* Limit the width of the form */
+    margin: auto; /* Center the form on the page */
+    background: white; /* White background for the form */
+    padding: 20px; /* Padding inside the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    height: 70vh;
+    overflow-y: scroll;
+    
+}
+
+.unique-item-description .unique-contact-info .unique-item-location .unique-item-image{
+    display: block; /* Make labels block elements */
+    margin-bottom: 10px; /* Space between labels and inputs */
+    font-weight: bold; /* Bold text for labels */
+}
+
+textarea, input[type="text"], input[type="number"], input[type="file"] {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size for inputs */
+}
+
+
+textarea {
+    resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+.unique-sell-item-submit {
+    width: 100%; /* Full width for the button */
+    padding: 10px; /* Padding inside the button */
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+button:focus {
+    outline: none; /* Remove outline on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle shadow on focus */
+}
+#close-btn-sellouritem{
+    position: absolute;
+    top: 100px;
+    left: 800px;
+    z-index: 1;
+
+}
